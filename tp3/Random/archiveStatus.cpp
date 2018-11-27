@@ -5,8 +5,8 @@
 
 int main(){
 	
-	int SequenceLength = 10;
-	int NbSequences = 10;
+	int SequenceLength = 1000000000;
+	int NbSequences = 1;
 	
 	CLHEP::MTwistEngine * s = new CLHEP::MTwistEngine();	// initialisation du moteur de MT
 	
@@ -16,13 +16,13 @@ int main(){
 		sprintf(num,"%d",numSeq);
 		strcpy(fileName,"Status");
 		strcat(fileName,num);
-		std::cout<<fileName<<std::endl;
+		//std::cout<<fileName<<std::endl;
 		
 		s->saveStatus(fileName);
-		std::cout<<"Sequence "<<numSeq<<" :"<<std::endl;
+		//std::cout<<"Sequence "<<numSeq<<" :"<<std::endl;
 		for(int i=0; i<SequenceLength; ++i){
 			float nombre = s->flat();
-			std::cout<<nombre<<std::endl;
+			//td::cout<<nombre<<std::endl;
 		}
 	}
 	
