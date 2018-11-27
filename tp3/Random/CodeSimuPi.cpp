@@ -5,7 +5,7 @@
 
 int main(int argc, char  * argv[]){
 	if(argc ==1 ){
-		int SequenceLength = 10;
+		int SequenceLength = 1000000000;
 		int NbPointsInTheCercle = 0;
 
 		CLHEP::MTwistEngine * s = new CLHEP::MTwistEngine();
@@ -13,14 +13,13 @@ int main(int argc, char  * argv[]){
 		s->restoreStatus(argv[0]);
 		for(int i=0; i<SequenceLength; ++i){
 			
-			float nombreX = s->flat();
-			float nombreY = s->flat();
+			double nombreX = s->flat();
+			double nombreY = s->flat();
 			if(nombreX*nombreX+nombreY*nombreY < 1)
 				++ NbPointsInTheCercle;
 		}
-		printf("PI = %f",(float)NbPointsInTheCercle*2/SequenceLength);
+		printf("PI = %f",(double)NbPointsInTheCercle*4/SequenceLength);
 	}else{
-		printf("Erreur, format attendu : CodeSimuPi Status0")
+		printf("Erreur, format attendu : CodeSimuPi Status0");
 	}
-	return 0;
-}
+	return 0;}
